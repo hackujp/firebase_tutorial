@@ -158,9 +158,18 @@ $ git clone https://github.com/hackujp/firebase-tutorial
 $ cd firebase-tutorial
 ```
 
-```shell
+Firebase CLI をインストールします
+
+Node.js を利用できる環境上であれば、 `npm` を利用してインストールができます。
+
+```
 $ npm install -g firebase-tools
 ```
+
+Node.js を利用できる環境上でなければ、下記リンクを参考にインストールを行いましょう。
+
+https://firebase.google.com/docs/cli?hl=ja#windows-standalone-binary
+
 
 ![](https://i.imgur.com/vt8b9M3.png)
 
@@ -230,6 +239,10 @@ Firestore Setup として出てくる
 `Configure as a single-page app (rewrite all urls to /index.html)? (y/N) ` は `y` を入力して Enter
 
 ![](https://i.imgur.com/9GZGqjV.png)
+
+`File public/index.html already exists. Overwrite?` は `N`
+
+![](https://i.imgur.com/Tr8dZAC.png)
 
 ここまで実施できたら、`firebase serve` で このレポジトリのプログラムを動かしてみましょう。
 
