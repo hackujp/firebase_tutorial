@@ -181,6 +181,8 @@ https://firebase.google.com/docs/cli?hl=ja#windows-standalone-binary
 
 Firebase CLI でログインを実施します。
 
+***CLI の作業は必ず firebase-tutorial ディレクトリの中に移動してから実行するようにしてください。***
+
 ```shell
 $ firebase login
 ```
