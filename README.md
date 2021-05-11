@@ -109,7 +109,7 @@ Google アナリティクスを有効化します。（必須ではありませ�
 
 ![](https://i.imgur.com/OEYNshc.png)
 
-「Cloud Firesotre」を選択して下さい。
+「Cloud Firestore」を選択して下さい。
 
 ![](https://i.imgur.com/10KzHVS.png)
 
@@ -121,7 +121,7 @@ Google アナリティクスを有効化します。（必須ではありませ�
 
 ![](https://i.imgur.com/eL7xc6K.png)
 
-ロケーションを選択します。（`asia-east2` がオススメ）
+ロケーションを選択します。（`asia-northeast1` がオススメ）
 
 ![](https://i.imgur.com/Lp1sQaJ.png)
 
@@ -140,7 +140,7 @@ Google アナリティクスを有効化します。（必須ではありませ�
 
 「開始するにはアプリを追加してください」と書かれた箇所のウェブアイコン `</>` をクリックしてください。
 
-アプリのニックネームの入力し、Firebase Hostingの設定をします。
+アプリのニックネームを入力し、Firebase Hostingの設定をします。
 
 ![](https://i.imgur.com/4gXKQJT.png)
 
@@ -316,61 +316,33 @@ $ firebase deploy
 ```
 
 下記のようにWelcomeの文字列がテストに変更されていれば完了です。
+（自分の好きな文章に変えて試してもいいとおもいます）
 
 ![](https://i.imgur.com/1C4bh8m.png)
 
 
-## ToDo アプリ を動かして見る
+## ToDo アプリ を動かしてみる
+いよいよTodoアプリを動かしてみましょう。
 
-ここまでできたら、メニューバーの歯車からプロジェクトの設定を開きます。
-
-![](https://i.imgur.com/3gqeEET.png)
-
-次のような画面に遷移するはずです。
-
-![](https://i.imgur.com/xmywGFy.png)
-
-Firebase SDK snippet で表示されているコードをコピーしておきます。
-
-![](https://i.imgur.com/omaafXd.png)
-
-
-※ ブラウザからソースコードをコピペされると他の人も操作できる状態になっているので、自由にデータベースを更新されてしまいます。そのまま公開（他人にリンクを教えるなど）はしないで下さい。
-
-※ SNS によるリンクの共有や検索に引っかかるようにして、一般に公開する場合は Firebase Authentication の機能を利用して、別途ユーザー作成、権限管理をするなどの対応を必ず行うようにして下さい。
-
-[Firebase apiKey ってさらしていいの? ほんとに?](https://qiita.com/hoshymo/items/e9c14ed157200b36eaa5)
-
-
-次に、既存の index.html をバックアップしたうえで、サンプルファイルを index.html に置き換えます。
+既存の index.html をバックアップしたうえで、サンプルファイルを index.html に置き換えます。
 
 ```shell
 $ mv public/index.html public/_index.html 
 $ cp public/sample.html public/index.html
 ```
 
-ここで先程コピペした Config 情報を index.html の以下の部分に上書きします。
+ローカルで確認します。
 
-index.html
-```htmlmixed=98
-let firebaseConfig = {
-    apiKey: "xxxxxxxxxx",
-    authDomain: "{project_id}.firebaseapp.com",
-    databaseURL: "https://{project_id}.firebaseio.com",
-    projectId: "{project_id}",
-    storageBucket: "{project_id}.appspot.com",
-    messagingSenderId: "yyyyyyyyyy",
-    appId: "1:yyyyyyyyyy:web:zzzzzzzzzzzz"
-};
+```shell
+$ firebase serve
 ```
 
-コピペが完了したら、デプロイします。
+`firebase serve`ができたら、先ほどと同じ URL をブラウザから開き、下図のような表示になるかを確認します。[こちら](https://www.atmarkit.co.jp/ait/articles/1403/20/news050.html) の方法を用いて、PC上でもスマホでの挙動をエミュレートして確認する事ができます。
 
+うまく動くことを確認できたら、deployをして公開しましょう
 ```shell
 $ firebase deploy
 ```
-
-デプロイができたら、先ほどと同じ URL をブラウザから開き、下図のような表示になるかを確認します。[こちら](https://www.atmarkit.co.jp/ait/articles/1403/20/news050.html) の方法を用いて、PC上でもスマホでの挙動をエミュレートして確認する事ができます。
 
 PC
 
@@ -394,7 +366,10 @@ PC
 ## イベント実施
 
 * 2021年度
-
+  * 05/13
+    * [【学生限定】【5/13開催】はじめての Firebase 【HTML/JavaScript】 \- connpass](https://hacku.connpass.com/event/211957/)
+  * 05/17
+    * [【学生限定】【5/17開催】はじめての Firebase 【HTML/JavaScript】 \- connpass](https://hacku.connpass.com/event/212063/)
 * 2020年度
-  * 2021/2/10
+  * 02/10
     * [【Open Hack U 2020 出場者限定】Firebase ワークショップ](https://hacku.connpass.com/event/201564/)
