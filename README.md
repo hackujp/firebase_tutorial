@@ -146,6 +146,8 @@ Google アナリティクスを有効化します。（必須ではありませ�
 
 「次へ」を選択します。
 
+※「Firebase SDKの追加」の作業は今回は不要です
+
 ![](https://i.imgur.com/oAyZQYN.png)
 
 ![](https://i.imgur.com/vv6uNDV.png)
@@ -167,6 +169,7 @@ $ npm install -g firebase-tools
 ```
 
 Node.js を利用できる環境上でなければ、下記リンクを参考にインストールを行いましょう。
+※Windowsの場合、ダウンロードに使うブラウザはChromeなど、Edge以外を推奨します
 
 https://firebase.google.com/docs/cli?hl=ja#windows-standalone-binary
 
@@ -181,7 +184,7 @@ https://firebase.google.com/docs/cli?hl=ja#windows-standalone-binary
 
 Firebase CLI でログインを実施します。
 
-***CLI の作業は必ず firebase-tutorial ディレクトリの中に移動してから実行するようにしてください。***
+***以降、CLIでのfirebaseの作業は必ず firebase-tutorial ディレクトリの中で実行するようにしてください。(publicディレクトリの中などだとうまく動作しません)***
 
 ```shell
 $ firebase login
