@@ -5,10 +5,12 @@
 Firebase とは何かを知りたい方は [イベント開催時の資料](docs/js_firebase_tutorial_for_github.pdf) も併せてご確認ください。
 
 ## チュートリアル
-チュートリアルは下記の２種類の形式からお好きな方をお選びください。内容は同じです。
+チュートリアルは下記のリンクをクリックして始めましょう
 
-- スライド形式：https://hackujp.github.io/firebase_tutorial/
-  - キーボードの左右キーで操作できます
+**チュートリアル開始**：https://hackujp.github.io/firebase_tutorial/
+
+<a href="https://hackujp.github.io/firebase_tutorial/"><img src="https://imgur.com/WWrMo12.png" width="300px"></a>
+
 - Markdown形式：[docs/firebase-tutorial.md](docs/firebase-tutorial.md)
 
 ## イベント実施

@@ -1,5 +1,8 @@
 class: center,middle
 # Firebase を用いて ToDo アプリ を動かそう！
+
+スライド表示の場合、キーボードの**左右**で操作できます
+
 ---
 
 ## アプリ画面イメージ
@@ -86,6 +89,8 @@ Googleアカウントでログインします。
 
 プロジェクト名を入力し、Firebaseの規約に同意します。
 
+プロジェクト名は任意の文字列(英数字)でOKです。図の例：test-myapplication
+
 ![:scale 80%](https://i.imgur.com/S08NNLu.png)
 ---
 
@@ -134,7 +139,7 @@ layout:true
 
 ![:scale 45%](https://i.imgur.com/Lp1sQaJ.png)
 
-数十秒ほど待って、画面が移行すればここの作業は完了です。
+「完了」を押した後、数十秒ほど待って、画面が移行すればここの作業は完了です。
 
 [Cloud Firestore](https://firebase.google.com/docs/firestore/quickstart?authuser=1) についての説明はこちらから確認できます。
 
@@ -172,39 +177,32 @@ layout:true
 
 ---
 
-この README がある Repository を clone します。
+※先ほどまでのfirebaseの画面はそのままにしておき、別のタブやウインドウで作業してください。
 
-```bash
-$ git clone https://github.com/hackujp/firebase-tutorial
-$ cd firebase-tutorial
-```
+[githubのページ](https://github.com/hackujp/firebase_tutorial)から
+`[Code]`メニューの中の「Download ZIP」でダウンロードをし、zipファイルの展開をしましょう。
 
-gitが使えない場合は、[githubのページ](https://github.com/hackujp/firebase_tutorial)から
-`[Code]`メニューの中の「Download ZIP」でダウンロードをし、zipファイルの展開をしましょう。その後ターミナルでそのフォルダ直下(firebase-tutorial/)の階層に移動してください。
-
-![:scale 50%](https://imgur.com/iGIvRx3.png)
+![:scale 60%](https://imgur.com/iGIvRx3.png)
 
 ---
 
-Firebase CLI をインストールします
+Firebase CLI をインストールします。
 
-Node.js を利用できる環境上であれば、 `npm` を利用してインストールができます。
+https://firebase.google.com/docs/cli?hl=ja にアクセスしてください。
 
-```bash
-$ npm install -g firebase-tools
-```
+ご自分の環境に合わせてページの指示に従ってインストールしてください。
 
-Node.js を利用できる環境上でなければ、下記リンクを参考にインストールを行いましょう。
+基本的に、下記の選択をお勧めします
+- Windowsの場合は「スタンドアロンバイナリ」
+- Macの場合は「自動インストールスクリプト」
+
+firebase login は後のスライドで行うのでここではしなくてOKです
+
+※npmを使える方はnpmでインストールする形でも大丈夫です。
+
 ※Windowsの場合、ダウンロードに使うブラウザはChromeなど、Edge以外を推奨します
 
-https://firebase.google.com/docs/cli?hl=ja
-
----
-
-![:scale 90%](https://i.imgur.com/vt8b9M3.png)
-
-完了まで1分ほど待機、完了したら「次へ」
-
+※Windowsの場合、exeファイル起動時に「WindowsによってPCが保護されました」という画面が出る場合があります。この表示が出たら「詳細情報」をクリックした後「実行」をクリックするとFirebaseCLIが起動できます
 ---
 
 ここからは画面上の指示に従って、デプロイ（Web上へのアップロード）を実施します。
@@ -213,16 +211,43 @@ https://firebase.google.com/docs/cli?hl=ja
 
 ---
 
-Firebase CLI でログインを実施します。（ブラウザでFirebaseのGoogleアカウントへのアクセスを許可してください）
+Firebase CLI でログインを実施します。下記のコマンドを入力して実行してください。
 
-***以降、CLIでのfirebaseの作業は必ず firebase-tutorial ディレクトリの中で実行するようにしてください。(publicディレクトリの中などだとうまく動作しません)***
+その後自動で開かれるブラウザでFirebaseのGoogleアカウントへのアクセスを許可してください。
 
 ```shell
 $ firebase login
 ```
 
-![:scale 95%](https://i.imgur.com/Au8iv8V.png)
+![:scale 85%](https://i.imgur.com/Au8iv8V.png)
 
+※Windows の場合FirebaseCLIを起動したタイミングでログインが実施される場合があります。
+その場合は上記のコマンドはスキップし、ブラウザでの操作に進んでください。
+
+※Windowsの場合、セキュリティファイアウォールの画面が開く場合があります。その場合は許可して次に進んでください。
+
+---
+
+先ほどGithubからzipファイルをダウンロードし、展開したフォルダにターミナル上で移動します。
+
+展開される場所は人によって違うので、自分の場合に合わせて調整してください
+
+Windowsの場合の例
+```bash
+cd C:¥Users¥ユーザー名¥Downloads¥firebase_tutorial-master¥firebase_tutorial-master
+```
+Macの場合
+```bash
+cd /Users/ユーザー名/Downloads/firebase_tutorial-master
+```
+
+`ls`あるいは`dir`コマンドで下のようなファイルが表示されていればOKです
+```bash
+❯ ls
+README.md               firebase.json           public/
+database.rules.json     firestore.indexes.json
+docs/                   firestore.rules
+```
 ---
 
 `firebase init` コマンドを実行して、いくつか質問をされるので space で回答します。
@@ -230,11 +255,14 @@ $ firebase login
 ```shell
 $ firebase init
 ```
+「Are you ready to proceed?」はそのままEnter
 
+キーボードの上下でカーソルを移動させ、
 *Firestore: Configure security rules and indexes files for Firestore* と
 *Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys*
 の **2つ** を space で選択して、Enter を押下します。
-![:scale 70%](https://imgur.com/Rz5tisf.png)
+
+![:scale 50%](https://imgur.com/Rz5tisf.png)
 
 ---
 
@@ -245,7 +273,7 @@ $ firebase init
 ![](https://i.imgur.com/qXP3LOp.png)
 ---
 
-`Select a default Firebase project for this directory: ` には、先程作成したプロジェクト名を Enter で選択しましょう。（以前に Firebase を別の用途で使用したことがある人は複数提示されます）
+`Select a default Firebase project for this directory: ` には、先程作成したプロジェクト名を上下キーで合わせ Enter で選択しましょう。（以前に Firebase を別の用途で使用したことがある人は複数提示されます）
 
 ![](https://i.imgur.com/ItQqmno.png)
 ---
@@ -278,9 +306,7 @@ Firestore Setup と出てくる
 
 ![](https://i.imgur.com/9GZGqjV.png)
 
-`File public/index.html already exists. Overwrite?` は `N`
-
-![](https://i.imgur.com/Tr8dZAC.png)
+`Set up automatic builds and deploys with GitHub` は何も選択せず Enter
 
 ---
 
@@ -290,19 +316,21 @@ Firestore Setup と出てくる
 $ firebase serve
 ```
 
-下記のようなコマンドの実行結果となるので、表示された http://localhost:5000 を開いてみましょう。
+下記のようなコマンドの実行結果となるので、表示された http://localhost:5000 をブラウザで開いてみましょう。
 
 ![](https://i.imgur.com/Xo7o2iu.png)
 
 ---
 
-下記のように表示されれば成功です。
+下記のように表示されれば成功です。(Firebaseを初期化した際に作成されるテストページ)
 
-![:scale 80%](https://i.imgur.com/G9JK7Ot.png)
+このページは実行しているパソコンでしか見ることができないページなので、まだ自分しか見られない状態です。
+
+![:scale 70%](https://i.imgur.com/G9JK7Ot.png)
 
 ---
 
-`firebase serve`はターミナルを選択した状態で、`Ctrl + C` (Windowsの場合は `Command + C`) で停止します。
+`firebase serve`はターミナルを選択した状態で、`Command + C` (Windowsの場合は `Ctrl + C`) で停止します。
 
 動作が確認できたら、Firebase Hosting の機能を利用して、クラウド（インターネット）上に Deploy します。
 
@@ -317,11 +345,13 @@ Deploy 後、ターミナルに表示された「Hosting URL: 」のURLか、
 
 ---
 
-下記のように表示されれば成功です。これで、このページはインターネット上に公開され、他の人からも閲覧できる状態になりました。
+先ほどと同じように下記のように表示されれば成功です。
 
-![:scale 75%](https://i.imgur.com/G9JK7Ot.png)
+これで、このページはインターネット上に公開され、他の人からも閲覧できる状態になりました。
 
-`firebase serve` ではローカル上（自分のPC上）でプログラムを実行させているのに対し、`firebase deploy` ではクラウド上に Deploy してインターネット上に公開させているということを理解しましょう。
+![:scale 50%](https://i.imgur.com/G9JK7Ot.png)
+
+`firebase serve` ではローカル上（自分のPC上）でプログラムを実行させているのに対し、`firebase deploy` ではクラウド上に Deploy してインターネット上に公開させているということに注意しましょう。
 
 ---
 layout:true
@@ -349,7 +379,7 @@ layout:true
 ```htmlembedded=34
 <div id="message">
   <h2>Welcome</h2>
-  <h1>テスト</h1>
+  <h1>テスト</h1><!-- テストという文章に変えた。 -->
   <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
   <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
 </div>
