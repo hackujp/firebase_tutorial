@@ -13,6 +13,12 @@ Firebase とは何かを知りたい方は [イベント開催時の資料](docs
 
 - Markdown形式：[docs/firebase-tutorial.md](docs/firebase-tutorial.md)
 
+## 初学者向け資料
+チュートリアルは終わったが、
+HTMLやJSをほとんどさわったことがない方向けの資料
+
+**資料スライドはこちら**：https://hackujp.github.io/firebase_tutorial/basic/index.html
+
 ## イベント実施
 
 * 2021年度
