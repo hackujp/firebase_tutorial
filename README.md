@@ -19,6 +19,12 @@ HTMLやJSをほとんどさわったことがない方向けの資料
 
 **資料スライドはこちら**：https://hackujp.github.io/firebase_tutorial/basic/index.html
 
+## 利用し終わったFirebaseプロジェクトについて
+本チュートリアルで扱ったプロジェクトはそのままだと公開されたままになってしまいます。
+不要になったタイミングで削除することを忘れないようにしましょう。
+
+**資料スライドはこちら**：https://hackujp.github.io/firebase_tutorial/delete-project/index.html
+
 ## イベント実施
 
 * 2021年度

@@ -163,7 +163,9 @@ layout:true
 
 「次へ」を選択します。
 
-※「Firebase SDKの追加」の作業は今回は不要です
+「Firebase SDKの追加」の作業は今回は不要です。
+
+（用意されているコードに既にSDKが追加されているため）
 
 ![:scale 60%](https://i.imgur.com/oAyZQYN.png)
 
@@ -330,7 +332,7 @@ $ firebase serve
 
 ---
 
-`firebase serve`はターミナルを選択した状態で、`Command + C` (Windowsの場合は `Ctrl + C`) で停止します。
+`firebase serve`はターミナルを選択した状態で、`Control + C` (Windowsの場合は `Ctrl + C`) で停止します。
 
 動作が確認できたら、Firebase Hosting の機能を利用して、クラウド（インターネット）上に Deploy します。
 
@@ -393,6 +395,24 @@ $ firebase serve
 ```
 ---
 
+#### ※変更の反映のさせ方について、
+firebase serveコマンドは実行したままでファイルの変更を行って構いません。<br>
+
+ファイルの変更ができたらページをリロードします。
+このとき、前回のページの情報（キャッシュ）が残っていると、うまく反映されない場合があります。
+
+画面の更新を行うときはキャッシュを削除したリロード（スーパーリロード）を行うようにしましょう。
+
+Mac
+```bash
+Command + Shift +R
+```
+Windows
+```bash
+Ctrl + Shift +R
+```
+---
+
 下記のようにWelcomeの文字列がテストに変更されていれば完了です。
 
 （自分の好きな文章に変えて試してもOKです）
@@ -449,7 +469,9 @@ $ firebase deploy
 余力があれば、`firebase serve`で確認しながら、少しずつ自分でコードにアレンジを加えてみてみると良い学習になると思います！
 
 ---
+layout:true
 ## アプリの非公開、削除
+---
 
 さて、アプリを無事に公開できたかと思います。
 ただ、そのまま放置するとリンクが有効のままになるため、非公開するにする方法を載せています。
@@ -462,7 +484,9 @@ $ firebase hosting:disable
 しばらく使わない際は忘れずに実行しておきましょう。
 
 ---
-### DBの削除方法
+layout:true
+## DBの削除方法
+---
 
 ```shell
 $ firebase firestore:delete
@@ -471,7 +495,9 @@ $ firebase firestore:delete
 こちらのコマンドを実行するとDB（firestore）のデータを削除できます。
 
 ---
-### プロジェクトの削除
+layout:true
+## プロジェクトの削除
+---
 
 [FirebaseのWeb](https://console.firebase.google.com/)上で削除を行います。
 1. 削除するプロジェクトを選択
