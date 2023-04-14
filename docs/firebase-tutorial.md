@@ -38,7 +38,7 @@ firebase-tutorial
 ---
 ## 前提
 
-* ここでは、Firebase の初期設定の仕方と、サンプルコードを動かします。エディタや Git に関する説明は行いません、また、コードを編集することも行いません。
+* ここでは、Firebase の初期設定の仕方と、サンプルコードを動かします。エディタ（テキスト編集ソフト）や Git に関する説明は行いません、また、コードを編集することも行いません。
 * 使用するエディターは自由ですが、質問対応等の場合に環境があっていることが望ましいため、特別こだわりがなければ**VSCode**を推奨します。
 * Macでの操作を前提としております。Firebaseの操作等は基本的にはどのOSでも変わらないため、Windowsでも開発可能ですがここでの説明ではカバーしておりません。 [こちら](./vscode_setup.pdf) を参考に環境構築 の設定をした上で、Mac と同じ手順で進めましょう
 * 2021/09/14 現在の情報です。Firebase に関する最新の情報は [公式ページ](https://firebase.google.com/) をご確認下さい
@@ -69,17 +69,20 @@ layout:true
 
  https://firebase.google.com/?hl=ja へアクセスし、「コンソールへ移動」を選択します。
 
-![:scale 60%](https://i.imgur.com/IQiYKab.png)
+![:scale 60%](https://i.imgur.com/Zu9TB70.png)
 ---
 
 Googleアカウントでログインします。
 
-![:scale 70%](https://i.imgur.com/NWhMIMa.png)
+※学校等の発行したGoogleアカウントの場合、<br>Firebaseを利用できない場合があります。
+その場合は個人のアカウントでログインし直してください。
+
+![:scale 60%](https://i.imgur.com/NWhMIMa.png)
 ---
 
 再度、「コンソールへ移動」を選択します。
 
-![:scale 60%](https://i.imgur.com/TxxlQB0.png)
+![:scale 60%](https://i.imgur.com/Zu9TB70.png)
 ---
 
 プロジェクトを作成します。
@@ -91,7 +94,7 @@ Googleアカウントでログインします。
 
 プロジェクト名は任意の文字列(英数字)でOKです。図の例：test-myapplication
 
-![:scale 80%](https://i.imgur.com/S08NNLu.png)
+![:scale 80%](https://i.imgur.com/3rma457.png)
 ---
 
 Google アナリティクスを有効化します。（必須ではありません）
@@ -100,7 +103,7 @@ Google アナリティクスを有効化します。（必須ではありませ�
 
 .left-column[![:scale 110%](https://i.imgur.com/o5Gy6Ql.png)]
 
-.right-column[![:scale 110%](https://i.imgur.com/60ibBSM.png)]
+.right-column[![:scale 110%](https://i.imgur.com/boGZvYI.png)]
 
 ---
 
@@ -122,12 +125,12 @@ layout:true
 
 左のメニューから「Firestore Database」（Cloud Firestore）を選択して下さい。
 
-![:scale 70%](https://i.imgur.com/10KzHVS.png)
+![:scale 70%](https://i.imgur.com/G0rI1CC.png)
 ---
 
 このような画面になったら「データベースの作成」を行います。
 
-![:scale 50%](https://i.imgur.com/hPSDky3.png)
+![:scale 50%](https://i.imgur.com/jMRDDjJ.png)
 ---
 
 「本番環境モードで開始」を選択します。
@@ -137,9 +140,9 @@ layout:true
 
 ロケーションを選択します。（`asia-northeast1`(東京) がオススメ）
 
-![:scale 45%](https://i.imgur.com/Lp1sQaJ.png)
+![:scale 45%](https://i.imgur.com/ga03igC.png)
 
-「完了」を押した後、数十秒ほど待って、画面が移行すればここの作業は完了です。
+「有効にする」を押した後、数十秒ほど待って、画面が移行すればここの作業は完了です。
 
 [Cloud Firestore](https://firebase.google.com/docs/firestore/quickstart?authuser=1) についての説明はこちらから確認できます。
 
@@ -156,6 +159,7 @@ layout:true
 ---
 
 アプリのニックネームを入力し、Firebase Hostingの設定をします。
+その後、「アプリの登録」をクリック
 
 ![:scale 70%](https://i.imgur.com/4gXKQJT.png)
 
@@ -181,7 +185,7 @@ layout:true
 
 ※先ほどまでのfirebaseの画面はそのままにしておき、別のタブやウインドウで作業してください。
 
-[githubのページ](https://github.com/hackujp/firebase_tutorial)から
+[GitHubのページ](https://github.com/hackujp/firebase_tutorial)から
 `[Code]`メニューの中の「Download ZIP」でダウンロードをし、zipファイルの展開をしましょう。
 
 ![:scale 60%](https://imgur.com/iGIvRx3.png)
@@ -230,7 +234,7 @@ $ firebase login
 
 ---
 
-先ほどGithubからzipファイルをダウンロードし、展開したフォルダにターミナル上で移動します。
+先ほどGitHubからzipファイルをダウンロードし、展開したフォルダにターミナル上で移動します。
 
 展開される場所は人によって違うので、自分の場合に合わせて調整してください
 
@@ -360,7 +364,7 @@ layout:true
 ## HTML の編集が反映されることを確認する
 ---
 
-次に、自分のプロジェクトで `public/index.html` をエディタなどで開き、下記箇所を変更します。
+次に、自分のプロジェクトで `public/index.html` をエディタ（テキスト編集ソフト）などで開き、下記箇所を変更します。
 
 `public/index.html`
 

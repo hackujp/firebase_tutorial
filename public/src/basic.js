@@ -27,7 +27,7 @@ function add() {
       create_at: new Date() // 現在時刻
     }).then(function (docRef) { // 成功した場合に実行される箇所
       getAll(); // 保持されている全てのタスクデータを取得し、表示する
-      document.getElementById("taskNameForAdd").value == ""; // inputbox に入力された値を空にする
+      document.getElementById("taskNameForAdd").value = ""; // inputbox に入力された値を空にする
       console.log("Document written with ID: ", docRef.id);
     })
     .catch(function (error) { // 失敗した場合に実行される箇所
